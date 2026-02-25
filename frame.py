@@ -7,10 +7,7 @@ class Frame:
 		self._duration = {}
 		
 	def out(self):
-		frame = self._text | self._chartData | self._goalData | self._icon | self._duration
-		return {
-			"frame": frame
-		}
+		return self._text | self._chartData | self._goalData | self._icon | self._duration
 
 	def text(self, text):
 		self._text = {
