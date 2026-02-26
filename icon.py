@@ -6,18 +6,18 @@ PIXEL = (0,128,0)
 BLACK_PIXEL = (0, 0, 0)
 
 class Icon:
-	def __init__(self):
+	def __init__(self, fill_color=BLACK_PIXEL):
 		# row = [*BLACK_PIXEL] * 8
 		# self._rows = [row] * 8
 		self._rows = [
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8,
-			[*BLACK_PIXEL] * 8
+			[*fill_color] * 8,
+			[*fill_color] * 8,
+			[*fill_color] * 8,
+			[*fill_color] * 8,
+			[*fill_color] * 8,
+			[*fill_color] * 8,
+			[*fill_color] * 8,
+			[*fill_color] * 8
 		]
 		
 	def set_pixel(self, x, y, r, g, b):
