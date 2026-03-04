@@ -7,7 +7,7 @@ from frame import Frame
 from icon import Icon
 from stock import StockData
 
-from env import BASIC_AUTH
+from env import LAMETRIC_BASIC_AUTH
 
 ENDPOINT = "http://192.168.1.17:8080/api/v2/widget/update/com.lametric.diy.devwidget/9828dd4e73e84efba171e49b9f33e0b1"
 RED_ICON = Icon(fill_color=(255,0,0))
@@ -42,6 +42,7 @@ def push_stock():
 	data = StockData()
 	frame = Frame()
 	frame.duration(10000)
+	frame.icon(45838)
 	value = float(data.fetch_latest_price("SHOP"))
 	frame.text(f"SHOP: {value:.2f}")
 	_push(frame)
@@ -51,7 +52,7 @@ def _push(frame):
 		"frames": [frame.out()]
 	}
 	headers = {
-		'Authorization': 'Basic ' + BASIC_AUTH
+		'Authorization': 'Basic ' + LAMETRIC_BASIC_AUTH
 	}
 	x = post(ENDPOINT, json=frames, headers=headers)	
 

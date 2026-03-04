@@ -1,9 +1,9 @@
 from twelvedata import TDClient
-from env import S_API_KEY
+from env import STOCK_API_KEY
 
 class StockData:
 	def __init__(self):
-		self._client = TDClient(apikey=S_API_KEY)
+		self._client = TDClient(apikey=STOCK_API_KEY)
 
 	def fetch_latest_price(self, symbol):
 		return self._client.price(symbol=symbol).as_json()["price"]
